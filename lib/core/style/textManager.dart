@@ -163,14 +163,14 @@ abstract class TextManagerStyle {
         color: color ?? Colors.white);
   }
 
-  static TextStyle kTextStyle36({
-    //*for size 36
-    weight,
+  static TextStyle kTextStyle40({
+    //*for size 40
     family,
     color,
+    weight,
   }) {
     return TextStyle(
-        fontSize: 35,
+        fontSize: 40,
         fontWeight: checkFontWeight(weight),
         fontFamily: FontsFamilyManager.main,
         color: color ?? Colors.white);

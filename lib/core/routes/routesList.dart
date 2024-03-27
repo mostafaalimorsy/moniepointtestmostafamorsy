@@ -17,7 +17,7 @@ class RouteManager {
   static Route<dynamic>? getRoute(RouteSettings routeSettings) {
     switch (routeSettings.name) {
       case AppRoutes.initial:
-        return buildPageRoute(child: const MainPage(), routeSettings: routeSettings);
+        return buildPageRoute(child: MainPage(), routeSettings: routeSettings);
     }
     return buildPageRoute(
         child: const Center(

@@ -10,10 +10,12 @@ abstract class ColorsManager {
   static const Color grey = Color(0xFFa5957e);
   static const Color white = Color(0xFFffffff);
 
-  static const LinearGradient scaffoldBackground = LinearGradient(
+  static LinearGradient scaffoldBackground = LinearGradient(
     colors: [
-      grey,
+      grey.withOpacity(0.1),
       orange,
     ],
+    begin: Alignment.topLeft, // Gradient starting point
+    end: Alignment.bottomRight, // Gradient ending point
   );
 }
