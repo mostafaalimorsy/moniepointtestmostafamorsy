@@ -5,6 +5,8 @@ import 'package:moniepointtestmostafamorsy/service/bloc_observel.dart';
 import 'package:moniepointtestmostafamorsy/launchApp.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,
