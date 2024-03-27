@@ -1,16 +1,31 @@
-# moniepointtestmostafamorsy
+# Mainpoint Task
 
-A new Flutter project.
+### Table of contents
 
-## Getting Started
+- [Application structure](#project-structure)
+- [Figma design ](#figma-design)
 
-This project is a starting point for a Flutter application.
+### Dripel design
 
-A few resources to get you started if this is your first Flutter project:
+https://dribbble.com/shots/23780608-Real-Estate-App
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Application structure
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+your application structure should look like this:
+
+```
+├── Android                         - It contains files required to run the application on an Android platform.
+├── assets                          - It contains all images and fonts of your application.
+├── iOS                             - It contains files required to run the application on an iOS platform.
+├── lib                             - The most important folder in the application, used to write most of the Dart code.
+    ├── main.dart                   - Starting point of the application
+    ├── core
+    │   ├── routes                  - It contains all routes
+    │   ├── style                   - It contains the static style class file
+    │   └── utils                   - It contains common files and utilities of the application
+    │        └──widgets             - It contains all custom widget classes
+    ├── Features                    - It contains widgets on the screens
+    ├── Service                     - It contains all the helper classes of the application
+    └── config
+         └── app_export             - It contains commonly used file imports
+```
