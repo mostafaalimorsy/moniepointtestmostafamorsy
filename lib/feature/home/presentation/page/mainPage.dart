@@ -1,19 +1,11 @@
 // ignore_for_file: prefer_const_constructors, file_names
 
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:moniepointtestmostafamorsy/core/style/textManager.dart';
 import 'package:moniepointtestmostafamorsy/core/utilites/extensions.dart';
-import 'package:moniepointtestmostafamorsy/core/utilites/img/pngManager.dart';
 import 'package:moniepointtestmostafamorsy/feature/home/presentation/widget/mainElement/list.dart';
 import 'package:moniepointtestmostafamorsy/feature/home/presentation/widget/mainElement/staticPart.dart';
-import 'package:moniepointtestmostafamorsy/feature/home/presentation/widget/pageElements/buyCircle.dart';
-import 'package:moniepointtestmostafamorsy/feature/home/presentation/widget/pageElements/rentSquare.dart';
-import 'package:moniepointtestmostafamorsy/feature/home/presentation/widget/subMainElements/header.dart';
-import 'package:moniepointtestmostafamorsy/feature/home/presentation/widget/subMainElements/statiticsPart.dart';
-import 'package:moniepointtestmostafamorsy/feature/home/presentation/widget/subMainElements/welcomeMsg.dart';
-import 'package:moniepointtestmostafamorsy/feature/home/presentation/widget/pageElements/location.dart';
-import 'package:moniepointtestmostafamorsy/feature/home/presentation/widget/pageElements/profileImg.dart';
+
+import 'package:moniepointtestmostafamorsy/feature/home/presentation/widget/subMainElements/map.dart';
 
 import '../../../../config/app_export/app_export.dart';
 
@@ -34,16 +26,12 @@ class _MainPageState extends State<MainPage> {
           alignment: Alignment.bottomCenter,
           children: [
             if (widget.pageIndex == 0) homeElement(),
-            if (widget.pageIndex == 1) searchElement(),
+            if (widget.pageIndex == 1) MapScreen(),
             bottomNav(),
           ],
         ),
       ),
     );
-  }
-
-  Widget searchElement() {
-    return Text("");
   }
 
   Widget bottomNav() {
