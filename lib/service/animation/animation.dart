@@ -78,4 +78,18 @@ class BottomAnimation {
       },
     );
   }
+  //* size factor Transaction from left to rifht Animation for elements
+
+  static Widget animationSizeMethod({widget, sizeFactorController}) {
+    return AnimatedBuilder(
+      animation: sizeFactorController,
+      builder: (BuildContext context, _) {
+        return SizeTransition(
+          axis: Axis.horizontal,
+          sizeFactor: sizeFactorController,
+          child: widget,
+        );
+      },
+    );
+  }
 }
