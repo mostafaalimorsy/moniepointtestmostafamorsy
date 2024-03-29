@@ -29,15 +29,11 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   auto_size_text: ^3.0.0
-  bloc: ^8.1.4
   cupertino_icons: ^1.0.2
   flutter:
     sdk: flutter
-  flutter_bloc: ^8.1.5
   flutter_launcher_icons: ^0.13.1
-  flutter_svg: ^2.0.10+1
   google_maps_flutter: ^2.2.8
-  lottie: ^3.1.0
   singleton: ^0.0.2
 
 dev_dependencies:
@@ -59,8 +55,6 @@ flutter:
     - assets/font/
     - assets/img/
     - assets/img/img/
-    - assets/img/json/
-    - assets/img/svg/
     - assets/map/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

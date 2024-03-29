@@ -1,3 +1,5 @@
+// ignore_for_file: use_key_in_widget_constructors, library_private_types_in_public_api, file_names, avoid_single_cascade_in_expression_statements
+
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:moniepointtestmostafamorsy/config/app_export/app_export.dart';
@@ -15,7 +17,7 @@ class _BuyWidgetState extends State<BuyWidget> with TickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
-    _controller = AnimationController(duration: Duration(seconds: 2), vsync: this);
+    _controller = AnimationController(duration: const Duration(seconds: 2), vsync: this);
     _controller?..forward();
   }
 
@@ -29,11 +31,11 @@ class _BuyWidgetState extends State<BuyWidget> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     return TweenAnimationBuilder(
       tween: Tween<double>(begin: 1000, end: 1034),
-      duration: Duration(seconds: 2),
+      duration: const Duration(seconds: 2),
       builder: (context, value, child) => Container(
         width: 170.w,
         height: 200.h,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           shape: BoxShape.circle,
           color: ColorsManager.orange,
         ),

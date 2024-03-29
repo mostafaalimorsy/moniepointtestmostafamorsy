@@ -6,7 +6,6 @@ import 'package:moniepointtestmostafamorsy/core/utilites/extensions.dart';
 import 'package:moniepointtestmostafamorsy/core/utilites/img/pngManager.dart';
 import 'package:moniepointtestmostafamorsy/feature/home/presentation/widget/subMainElements/statiticsPart.dart';
 import 'package:moniepointtestmostafamorsy/service/animation/animation.dart';
-import 'package:vector_math/vector_math_64.dart' hide Colors;
 
 class ListProduct extends StatefulWidget {
   const ListProduct({Key? key}) : super(key: key);
@@ -42,7 +41,7 @@ class _ListProductState extends State<ListProduct> with TickerProviderStateMixin
   void initCurvedAnimation() {
     animationController = AnimationController(
       vsync: this,
-      duration: Duration(seconds: 1),
+      duration: const Duration(seconds: 1),
     );
     animation = CurvedAnimation(parent: animationController, curve: Curves.easeInCirc);
     animationController.forward();
@@ -51,16 +50,16 @@ class _ListProductState extends State<ListProduct> with TickerProviderStateMixin
   void initSlidingAnimation() {
     buttonAnimationController = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 2200),
+      duration: const Duration(milliseconds: 2200),
     );
-    bottomSlidingAnimation = Tween<Offset>(begin: Offset(-7, 0), end: Offset.zero).animate(buttonAnimationController);
+    bottomSlidingAnimation = Tween<Offset>(begin: const Offset(-7, 0), end: Offset.zero).animate(buttonAnimationController);
     buttonAnimationController.forward();
   }
 
   void initSizeFactorAnimation() {
     listAnimationController = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 2200),
+      duration: const Duration(milliseconds: 2200),
     );
     listAnimation = Tween<double>(begin: 100, end: 0).animate(listAnimationController);
     listAnimation = CurvedAnimation(parent: listAnimationController, curve: Curves.linear);
@@ -185,7 +184,7 @@ class _ListProductState extends State<ListProduct> with TickerProviderStateMixin
                                       const Spacer(),
                                       BottomAnimation.animationSlidingMethod(
                                         slidingController: bottomSlidingAnimation,
-                                        widget: CircleAvatar(
+                                        widget: const CircleAvatar(
                                           backgroundColor: ColorsManager.white,
                                           child: Icon(
                                             Icons.arrow_forward_ios_outlined,
@@ -242,7 +241,7 @@ class _ListProductState extends State<ListProduct> with TickerProviderStateMixin
                                       const Spacer(),
                                       BottomAnimation.animationSlidingMethod(
                                         slidingController: bottomSlidingAnimation,
-                                        widget: CircleAvatar(
+                                        widget: const CircleAvatar(
                                           backgroundColor: ColorsManager.white,
                                           child: Icon(
                                             Icons.arrow_forward_ios_outlined,
@@ -296,7 +295,7 @@ class _ListProductState extends State<ListProduct> with TickerProviderStateMixin
                                   const Spacer(),
                                   BottomAnimation.animationSlidingMethod(
                                     slidingController: bottomSlidingAnimation,
-                                    widget: CircleAvatar(
+                                    widget: const CircleAvatar(
                                       backgroundColor: ColorsManager.white,
                                       child: Icon(
                                         Icons.arrow_forward_ios_outlined,

@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:moniepointtestmostafamorsy/feature/home/presentation/widget/pageElements/buyCircle.dart';
 import 'package:moniepointtestmostafamorsy/feature/home/presentation/widget/pageElements/rentSquare.dart';
@@ -28,7 +30,7 @@ class _StatiticsPartState extends State<StatiticsPart> with SingleTickerProvider
   void initCurvedAnimation() {
     animationController = AnimationController(
       vsync: this,
-      duration: Duration(seconds: 1),
+      duration: const Duration(seconds: 1),
     );
     animation = CurvedAnimation(parent: animationController, curve: Curves.easeInCirc);
     animationController.forward();

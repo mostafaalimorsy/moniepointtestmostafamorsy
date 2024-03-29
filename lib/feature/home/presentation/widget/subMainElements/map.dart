@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:moniepointtestmostafamorsy/config/app_export/app_export.dart';
@@ -36,7 +38,7 @@ class MapScreenState extends State<MapScreen> with TickerProviderStateMixin {
   void initCurvedAnimation() {
     animationController = AnimationController(
       vsync: this,
-      duration: Duration(seconds: 1),
+      duration: const Duration(seconds: 1),
     );
     animation = CurvedAnimation(parent: animationController, curve: Curves.easeInCirc);
     animationController.forward();
@@ -45,7 +47,7 @@ class MapScreenState extends State<MapScreen> with TickerProviderStateMixin {
   void initDialogAnimation() {
     dialogAnimationController = AnimationController(
       vsync: this,
-      duration: Duration(seconds: 1),
+      duration: const Duration(seconds: 1),
     );
     dialogAnimation = CurvedAnimation(parent: dialogAnimationController, curve: Curves.easeInCirc);
     dialogAnimationController.forward();
@@ -87,7 +89,7 @@ class MapScreenState extends State<MapScreen> with TickerProviderStateMixin {
                 bottomLeft: Radius.circular(15)),
             color: ColorsManager.white,
           ),
-          duration: Duration(seconds: 2),
+          duration: const Duration(seconds: 2),
           curve: Curves.bounceIn,
           clipBehavior: Clip.antiAliasWithSaveLayer,
           child: Padding(
@@ -100,7 +102,7 @@ class MapScreenState extends State<MapScreen> with TickerProviderStateMixin {
                     padding: getPadding(vertical: 5.h),
                     child: Row(
                       children: [
-                        Icon(
+                        const Icon(
                           Icons.verified_user_outlined,
                           color: Colors.grey,
                         ),
@@ -140,7 +142,7 @@ class MapScreenState extends State<MapScreen> with TickerProviderStateMixin {
                     padding: getPadding(vertical: 5.h),
                     child: Row(
                       children: [
-                        Icon(
+                        const Icon(
                           Icons.shopping_basket_outlined,
                           color: Colors.grey,
                         ),
@@ -201,14 +203,14 @@ class MapScreenState extends State<MapScreen> with TickerProviderStateMixin {
             ),
             color: ColorsManager.orange,
           ),
-          duration: Duration(seconds: 1),
+          duration: const Duration(seconds: 1),
           curve: Curves.decelerate,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               if (!widget.isAddress)
-                Icon(
+                const Icon(
                   Icons.house,
                   color: ColorsManager.white,
                 ),
@@ -256,7 +258,7 @@ class MapScreenState extends State<MapScreen> with TickerProviderStateMixin {
             backgroundColor: Colors.grey[500]!.withOpacity(0.7),
             child: Transform.rotate(
                 angle: 1.0,
-                child: Icon(
+                child: const Icon(
                   Icons.arrow_drop_up_rounded,
                   color: ColorsManager.white,
                   size: 40,
@@ -282,7 +284,7 @@ class MapScreenState extends State<MapScreen> with TickerProviderStateMixin {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(Icons.list, color: ColorsManager.white),
+            const Icon(Icons.list, color: ColorsManager.white),
             4.hs,
             AutoSizeText(
               "List of variants",
@@ -321,7 +323,7 @@ class MapScreenState extends State<MapScreen> with TickerProviderStateMixin {
               ],
             ),
           ),
-          CircleAvatar(
+          const CircleAvatar(
             backgroundColor: ColorsManager.white,
             child: Icon(Icons.tune_sharp, size: 20, color: ColorsManager.black),
           )

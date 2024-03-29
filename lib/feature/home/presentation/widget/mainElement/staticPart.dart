@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:moniepointtestmostafamorsy/feature/home/presentation/widget/subMainElements/header.dart';
 import 'package:moniepointtestmostafamorsy/feature/home/presentation/widget/subMainElements/welcomeMsg.dart';
