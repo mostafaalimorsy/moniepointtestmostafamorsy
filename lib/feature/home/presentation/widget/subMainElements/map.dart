@@ -29,7 +29,7 @@ class MapScreenState extends State<MapScreen> with TickerProviderStateMixin {
   @override
   void dispose() {
     animationController.dispose();
-    // dialogAnimationController.dispose();
+    dialogAnimationController.dispose();
     super.dispose();
   }
 
