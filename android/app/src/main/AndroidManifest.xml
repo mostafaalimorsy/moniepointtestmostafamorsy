@@ -19,10 +19,6 @@
               android:name="io.flutter.embedding.android.NormalTheme"
               android:resource="@style/NormalTheme"
               />
-            <meta-data
-              android:name="com.google.android.gms.maps.api_key"
-              android:value="AIzaSyD4NOax9CTWXwmKaaRwcpV-GxljkINRXxw"
-              />
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
