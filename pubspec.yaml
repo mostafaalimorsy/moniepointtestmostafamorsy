@@ -33,6 +33,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_launcher_icons: ^0.13.1
+  flutter_native_splash: ^2.3.10
   google_maps_flutter: ^2.2.8
   singleton: ^0.0.2
 
