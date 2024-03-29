@@ -5,6 +5,7 @@ import 'package:moniepointtestmostafamorsy/core/style/textManager.dart';
 import 'package:moniepointtestmostafamorsy/core/utilites/extensions.dart';
 import 'package:moniepointtestmostafamorsy/core/utilites/img/pngManager.dart';
 import 'package:moniepointtestmostafamorsy/feature/home/presentation/widget/subMainElements/statiticsPart.dart';
+import 'package:moniepointtestmostafamorsy/service/animation/animation.dart';
 
 class ListProduct extends StatefulWidget {
   const ListProduct({Key? key}) : super(key: key);
@@ -12,7 +13,44 @@ class ListProduct extends StatefulWidget {
   State<ListProduct> createState() => _ListProductState();
 }
 
-class _ListProductState extends State<ListProduct> {
+class _ListProductState extends State<ListProduct> with TickerProviderStateMixin {
+  late AnimationController animationController;
+  late AnimationController buttonAnimationController;
+  late Animation<double> animation;
+  late Animation<Offset> bottomSlidingAnimation;
+
+  @override
+  void initState() {
+    initCurvedAnimation();
+    initSlidingAnimation();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    animationController.dispose();
+    buttonAnimationController.dispose();
+    super.dispose();
+  }
+
+  void initCurvedAnimation() {
+    animationController = AnimationController(
+      vsync: this,
+      duration: Duration(seconds: 1),
+    );
+    animation = CurvedAnimation(parent: animationController, curve: Curves.easeInCirc);
+    animationController.forward();
+  }
+
+  void initSlidingAnimation() {
+    buttonAnimationController = AnimationController(
+      vsync: this,
+      duration: Duration(milliseconds: 2200),
+    );
+    bottomSlidingAnimation = Tween<Offset>(begin: Offset(-7, 0), end: Offset.zero).animate(buttonAnimationController);
+    buttonAnimationController.forward();
+  }
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -24,11 +62,12 @@ class _ListProductState extends State<ListProduct> {
           Column(
             children: [
               const StatiticsPart(),
-              Container(
+              AnimatedContainer(
                 decoration: const BoxDecoration(
                   borderRadius: BorderRadius.only(topLeft: Radius.circular(20), topRight: Radius.circular(20)),
                   color: ColorsManager.white,
                 ),
+                duration: Duration(seconds: 1),
                 child: Column(
                   children: [
                     Stack(
@@ -44,8 +83,9 @@ class _ListProductState extends State<ListProduct> {
                         Positioned.directional(
                           bottom: 20.h,
                           textDirection: TextDirection.ltr,
-                          child: Container(
-                            height: 40.h,
+                          child: AnimatedContainer(
+                            duration: Duration(seconds: 1),
+                            height: 50.h,
                             width: 300.w,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(20),
@@ -62,12 +102,15 @@ class _ListProductState extends State<ListProduct> {
                                   ),
                                 ),
                                 const Spacer(),
-                                const CircleAvatar(
-                                  backgroundColor: ColorsManager.white,
-                                  child: Icon(
-                                    Icons.arrow_forward_ios_outlined,
-                                    color: ColorsManager.black,
-                                    size: 10,
+                                BottomAnimation.animationSlidingMethod(
+                                  slidingController: bottomSlidingAnimation,
+                                  widget: const CircleAvatar(
+                                    backgroundColor: ColorsManager.white,
+                                    child: Icon(
+                                      Icons.arrow_forward_ios_outlined,
+                                      color: ColorsManager.grey,
+                                      size: 10,
+                                    ),
                                   ),
                                 )
                               ],
@@ -98,7 +141,7 @@ class _ListProductState extends State<ListProduct> {
                               bottom: 20.h,
                               textDirection: TextDirection.ltr,
                               child: Container(
-                                height: 40.h,
+                                height: 50.h,
                                 width: 150.w,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(20),
@@ -115,12 +158,15 @@ class _ListProductState extends State<ListProduct> {
                                       ),
                                     ),
                                     const Spacer(),
-                                    const CircleAvatar(
-                                      backgroundColor: ColorsManager.white,
-                                      child: Icon(
-                                        Icons.arrow_forward_ios_outlined,
-                                        color: ColorsManager.black,
-                                        size: 10,
+                                    BottomAnimation.animationSlidingMethod(
+                                      slidingController: bottomSlidingAnimation,
+                                      widget: CircleAvatar(
+                                        backgroundColor: ColorsManager.white,
+                                        child: Icon(
+                                          Icons.arrow_forward_ios_outlined,
+                                          color: ColorsManager.grey,
+                                          size: 10,
+                                        ),
                                       ),
                                     )
                                   ],
@@ -148,7 +194,7 @@ class _ListProductState extends State<ListProduct> {
                               bottom: 20.h,
                               textDirection: TextDirection.ltr,
                               child: Container(
-                                height: 40.h,
+                                height: 50.h,
                                 width: 150.w,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(20),
@@ -165,14 +211,17 @@ class _ListProductState extends State<ListProduct> {
                                       ),
                                     ),
                                     const Spacer(),
-                                    const CircleAvatar(
-                                      backgroundColor: ColorsManager.white,
-                                      child: Icon(
-                                        Icons.arrow_forward_ios_outlined,
-                                        color: ColorsManager.black,
-                                        size: 10,
+                                    BottomAnimation.animationSlidingMethod(
+                                      slidingController: bottomSlidingAnimation,
+                                      widget: CircleAvatar(
+                                        backgroundColor: ColorsManager.white,
+                                        child: Icon(
+                                          Icons.arrow_forward_ios_outlined,
+                                          color: ColorsManager.grey,
+                                          size: 10,
+                                        ),
                                       ),
-                                    )
+                                    ),
                                   ],
                                 ),
                               ),
@@ -195,7 +244,7 @@ class _ListProductState extends State<ListProduct> {
                           bottom: 20.h,
                           textDirection: TextDirection.ltr,
                           child: Container(
-                            height: 40.h,
+                            height: 50.h,
                             width: 300.w,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(20),
@@ -212,14 +261,17 @@ class _ListProductState extends State<ListProduct> {
                                   ),
                                 ),
                                 const Spacer(),
-                                const CircleAvatar(
-                                  backgroundColor: ColorsManager.white,
-                                  child: Icon(
-                                    Icons.arrow_forward_ios_outlined,
-                                    color: ColorsManager.black,
-                                    size: 10,
+                                BottomAnimation.animationSlidingMethod(
+                                  slidingController: bottomSlidingAnimation,
+                                  widget: CircleAvatar(
+                                    backgroundColor: ColorsManager.white,
+                                    child: Icon(
+                                      Icons.arrow_forward_ios_outlined,
+                                      color: ColorsManager.grey,
+                                      size: 10,
+                                    ),
                                   ),
-                                )
+                                ),
                               ],
                             ),
                           ),

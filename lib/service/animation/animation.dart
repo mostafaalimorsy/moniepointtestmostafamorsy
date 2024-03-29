@@ -24,21 +24,17 @@ class BottomAnimation {
       vsync: vsyncThis,
       duration: Duration(seconds: 2),
     );
-    animation =
-        CurvedAnimation(parent: animationController, curve: Curves.easeInCirc);
+    animation = CurvedAnimation(parent: animationController, curve: Curves.easeInCirc);
     animationController.forward();
   }
 // //*initialize sliding animation func
 
-  static void initSlidingAnimation(
-      {slidingAnimation, animationController, vsyncThis}) {
+  static void initSlidingAnimation({slidingAnimation, animationController, vsyncThis}) {
     animationController = AnimationController(
       vsync: vsyncThis,
       duration: Duration(milliseconds: 2200),
     );
-    slidingAnimation =
-        Tween<Offset>(begin: const Offset(0, 2), end: Offset.zero)
-            .animate(animationController);
+    slidingAnimation = Tween<Offset>(begin: const Offset(0, 2), end: Offset.zero).animate(animationController);
     animationController.forward();
   }
 // ************************************************** Animation Functions ************************************************** //
@@ -83,8 +79,3 @@ class BottomAnimation {
     );
   }
 }
-
-//  <key>CFBundleDisplayName</key>
-//   <string>Sadad Flutter Sdk</string>
-//   <key>CFBundleName</key>
-//   <string>sadad_flutter_sdk_example</string>

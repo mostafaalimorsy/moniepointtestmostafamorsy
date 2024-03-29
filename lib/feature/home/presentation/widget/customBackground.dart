@@ -15,7 +15,7 @@ class CustomBackground extends StatelessWidget {
     return Container(
       // width: MediaQuery.sizeOf(context).width,
       decoration: BoxDecoration(gradient: ColorsManager.scaffoldBackground),
-      child: SafeArea(child: child!),
+      child: child!,
     );
   }
 }

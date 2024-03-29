@@ -13,7 +13,7 @@ abstract class ColorsManager {
   static LinearGradient scaffoldBackground = LinearGradient(
     colors: [
       grey.withOpacity(0.1),
-      orange,
+      orange.withOpacity(0.4),
     ],
     begin: Alignment.topLeft, // Gradient starting point
     end: Alignment.bottomRight, // Gradient ending point
